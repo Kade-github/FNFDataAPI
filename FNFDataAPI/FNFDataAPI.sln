@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNFDataAPI", "FNFDataAPI\FNFDataAPI.csproj", "{92B6EAF5-F48B-4EA6-BBE6-EFB03D3B5C59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNFDataAPITests", "FNFDataAPITests\FNFDataAPITests.csproj", "{FBB66A59-9108-4E4B-B220-4F154BAD595B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92B6EAF5-F48B-4EA6-BBE6-EFB03D3B5C59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B6EAF5-F48B-4EA6-BBE6-EFB03D3B5C59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B6EAF5-F48B-4EA6-BBE6-EFB03D3B5C59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B6EAF5-F48B-4EA6-BBE6-EFB03D3B5C59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBB66A59-9108-4E4B-B220-4F154BAD595B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBB66A59-9108-4E4B-B220-4F154BAD595B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBB66A59-9108-4E4B-B220-4F154BAD595B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBB66A59-9108-4E4B-B220-4F154BAD595B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
