@@ -46,15 +46,29 @@ namespace FridayNightFunkin
             get => dataRoot.song.Player2;
             set => dataRoot.song.Player2 = value;
         }
-        
-        public FNFSong(string songPath)
+
+        public FNFSong(string data, DataReadType dataReadType = DataReadType.AsLocalFile)
         {
-            dataRoot= JsonConvert.DeserializeObject<Song.Root>(File.ReadAllText(songPath));
+            switch (dataReadType)
+            {
+                case DataReadType.AsLocalFile:
+                    dataRoot = JsonConvert.DeserializeObject<Song.Root>(File.ReadAllText(data));
+                    break;
+                case DataReadType.AsRawJson:
+                    dataRoot = JsonConvert.DeserializeObject<Song.Root>(data);
+                    break;
+            }
             Sections = new List<FNFSection>();
             foreach (Note n in dataRoot.song.Notes)
             {
                 Sections.Add(new FNFSection(n));
             }
+        }
+
+        public enum DataReadType
+        {
+            AsLocalFile,
+            AsRawJson
         }
 
         public void SaveSong(string savePath)

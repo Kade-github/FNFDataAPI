@@ -8,12 +8,21 @@ namespace FNFDataAPITests
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Song Directory:");
-            string dir = Console.ReadLine();
+            Console.WriteLine("Song Data or Directory:");
+            string data = Console.ReadLine();
+            Console.WriteLine("Is this a directory (1) or JSON data (2)?");
+            string option = Console.ReadLine();
             Console.WriteLine("TEST 1 - LOADING");
             try
             {
-                FNFSong song = new FNFSong(dir);
+                FNFSong song;
+                if (option == "1")
+                    song = new FNFSong(data);
+                else
+                    song = new FNFSong(data, FNFSong.DataReadType.AsRawJson);
+                //It would have been an "if option == 2" but it has to be an "else" or
+                //else the compiler flips its shit.
+
                 Console.WriteLine("Song Name: " + song.SongName);
                 Console.WriteLine("Song BPM: " + song.Bpm);
                 Console.WriteLine("Song Speed: " + song.Speed);
