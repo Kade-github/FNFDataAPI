@@ -109,6 +109,7 @@ namespace FridayNightFunkin
         
         public class FNFSection
         {
+            private const int ValidSectionCapacity = 3;
             public Note dataNote { get; }
             public List<FNFNote> Notes { get; set; }
             public bool MustHitSection { get => dataNote.MustHitSection; set => dataNote.MustHitSection = value; }
@@ -156,6 +157,14 @@ namespace FridayNightFunkin
                 Notes = new List<FNFNote>();
                 foreach (List<decimal> n in dataNote.sectionNotes)
                 {
+                    // if some notes are missing
+                    while (n.Count != ValidSectionCapacity)
+                    {
+                        if (n.Count < ValidSectionCapacity)
+                            n.Add(0);
+                        if (n.Count > ValidSectionCapacity)
+                            n.RemoveAt(n.Count - 1);
+                    }
                     Notes.Add(new FNFNote(n[0],n[1],n[2]));
                 }
             }
